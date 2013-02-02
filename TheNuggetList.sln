@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheNuggetList.Data", "TheNu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheNuggetList.Domain", "TheNuggetList.Domain\TheNuggetList.Domain.csproj", "{9B5E8631-26CA-474C-87D5-CB10A92D6E6A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheNuggetList.Commands", "TheNuggetList.Commands\TheNuggetList.Commands.csproj", "{6677D8FB-6104-498B-A9BF-A5A471D79F7E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{9B5E8631-26CA-474C-87D5-CB10A92D6E6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B5E8631-26CA-474C-87D5-CB10A92D6E6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B5E8631-26CA-474C-87D5-CB10A92D6E6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6677D8FB-6104-498B-A9BF-A5A471D79F7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6677D8FB-6104-498B-A9BF-A5A471D79F7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6677D8FB-6104-498B-A9BF-A5A471D79F7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6677D8FB-6104-498B-A9BF-A5A471D79F7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
