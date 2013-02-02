@@ -7,8 +7,6 @@ namespace TheNuggetList.Domain
 {
     public class Nugget
     {
-        public Nugget()   {  }
-
         public int Id { get; set; }
         public string Title { get; set; }
     }
