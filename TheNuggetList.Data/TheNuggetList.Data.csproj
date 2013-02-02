@@ -45,13 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201301261629499_Initial.cs" />
-    <Compile Include="Migrations\201301261629499_Initial.Designer.cs">
-      <DependentUpon>201301261629499_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201301261943108_Added Title To Nugget.cs" />
-    <Compile Include="Migrations\201301261943108_Added Title To Nugget.Designer.cs">
-      <DependentUpon>201301261943108_Added Title To Nugget.cs</DependentUpon>
+    <Compile Include="Migrations\201302021209510_AddTestMigration.cs" />
+    <Compile Include="Migrations\201302021209510_AddTestMigration.Designer.cs">
+      <DependentUpon>201302021209510_AddTestMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NuggetDbContext.cs" />
@@ -61,18 +57,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201301261629499_Initial.resx">
-      <DependentUpon>201301261629499_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201301261943108_Added Title To Nugget.resx">
-      <DependentUpon>201301261943108_Added Title To Nugget.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\TheNuggetList.Domain\TheNuggetList.Domain.csproj">
       <Project>{9B5E8631-26CA-474C-87D5-CB10A92D6E6A}</Project>
       <Name>TheNuggetList.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201302021209510_AddTestMigration.resx">
+      <DependentUpon>201302021209510_AddTestMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -8,6 +8,6 @@ namespace TheNuggetList.Domain
     public class Nugget
     {
         public int Id { get; set; }
-        public string Title { get; set; }
+		public string Title { get; set; }
     }
 }
