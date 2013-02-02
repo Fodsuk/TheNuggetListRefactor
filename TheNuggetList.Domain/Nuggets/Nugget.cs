@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TheNuggetList.Domain
+namespace TheNuggetList.Domain.Nuggets
 {
     public class Nugget
     {
