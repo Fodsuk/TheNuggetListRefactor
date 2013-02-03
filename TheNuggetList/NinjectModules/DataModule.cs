@@ -4,7 +4,9 @@ using System.Linq;
 using System.Web;
 using Ninject.Modules;
 using Ninject.Extensions.Conventions;
-
+using System.Data.Entity;
+using TheNuggetList.Data;
+using Ninject.Web.Common;
 
 namespace TheNuggetList.NinjectModules
 {
@@ -17,6 +19,8 @@ namespace TheNuggetList.NinjectModules
                 .SelectAllClasses()
                 .BindAllInterfaces()
             );
+
+            Kernel.Bind<NuggetDbContext>().ToSelf().InRequestScope();
         }
     }
 }

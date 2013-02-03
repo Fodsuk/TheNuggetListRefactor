@@ -51,6 +51,10 @@
     <Compile Include="Migrations\201302031427307_AddedMember.Designer.cs">
       <DependentUpon>201302031427307_AddedMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201302031633090_AddFieldsToNugget.cs" />
+    <Compile Include="Migrations\201302031633090_AddFieldsToNugget.Designer.cs">
+      <DependentUpon>201302031633090_AddFieldsToNugget.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NuggetDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,6 +71,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201302031427307_AddedMember.resx">
       <DependentUpon>201302031427307_AddedMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201302031633090_AddFieldsToNugget.resx">
+      <DependentUpon>201302031633090_AddFieldsToNugget.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

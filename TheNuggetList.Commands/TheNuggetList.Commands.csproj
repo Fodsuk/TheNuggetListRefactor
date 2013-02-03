@@ -12,6 +12,8 @@
     <AssemblyName>TheNuggetList.Commands</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,11 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Radiator.Core">
       <HintPath>..\packages\Radiator.Core.1.1.0.0\lib\net40\Radiator.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseExecutor.cs" />
     <Compile Include="BaseValidator.cs" />
     <Compile Include="Nuggets\CreateNuggetCommand.cs" />
     <Compile Include="Nuggets\Executors\CreateNuggetExecutor.cs" />
@@ -52,8 +60,18 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\TheNuggetList.Data\TheNuggetList.Data.csproj">
+      <Project>{5AD1C4E8-4E3C-4BFD-9464-37064DE45FA8}</Project>
+      <Name>TheNuggetList.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TheNuggetList.Domain\TheNuggetList.Domain.csproj">
+      <Project>{9B5E8631-26CA-474C-87D5-CB10A92D6E6A}</Project>
+      <Name>TheNuggetList.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

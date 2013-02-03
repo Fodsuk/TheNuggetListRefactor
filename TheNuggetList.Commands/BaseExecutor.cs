@@ -4,16 +4,23 @@ using System.Linq;
 using System.Text;
 using Radiator.Core.Commanding;
 using Radiator.Core;
+using TheNuggetList.Data;
 
 namespace TheNuggetList.Commands
 {
-    public abstract class BaseValidator<T> : CommandValidator<T> where T : Command
+    public abstract class BaseExecutor<T> : CommandExecutor<T> where T : Command
     {
-        protected bool IsEmptyOrNullString(string str)
+        public BaseExecutor()
         {
-            return String.IsNullOrWhiteSpace(str);
         }
 
+        public BaseExecutor(NuggetDbContext nuggetDbContext)
+        {
+            NuggetDbContext = nuggetDbContext;            
+        }
+        
+        protected NuggetDbContext NuggetDbContext { get; private set; }
+        
         protected ProcessResult SuccessfulResult()
         {
             return SuccessfulResult(String.Empty);
@@ -42,5 +49,4 @@ namespace TheNuggetList.Commands
             };
         }
     }
-
 }
