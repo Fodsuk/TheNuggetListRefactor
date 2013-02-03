@@ -47,10 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201302031216289_Inital.cs" />
-    <Compile Include="Migrations\201302031216289_Inital.Designer.cs">
-      <DependentUpon>201302031216289_Inital.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NuggetDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -63,11 +59,6 @@
       <Project>{9B5E8631-26CA-474C-87D5-CB10A92D6E6A}</Project>
       <Name>TheNuggetList.Domain</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201302031216289_Inital.resx">
-      <DependentUpon>201302031216289_Inital.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
