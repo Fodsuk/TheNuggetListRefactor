@@ -7,14 +7,17 @@ using Radiator.Core;
 
 namespace TheNuggetList.Commands.Nuggets.Validators
 {
-    public class CreateNuggetValidator : CommandValidator<CreateNuggetCommand>
+    public class CreateNuggetValidator : BaseValidator<CreateNuggetCommand>
     {
         public override ProcessResult ValidateCommand(CreateNuggetCommand command)
         {
-            return new ProcessResult()
-            {
-                Successful = true                
-            };
+            if (IsEmptyOrNullString(command.Title))
+                return FailedResult("You must provide a Title");
+
+            if (IsEmptyOrNullString(command.Description))
+                return FailedResult("You must provide a Description");
+
+            return SuccessfulResult();           
         }
     }
 }

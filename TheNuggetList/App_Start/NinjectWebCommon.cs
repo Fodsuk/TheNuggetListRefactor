@@ -11,6 +11,14 @@ namespace TheNuggetList.App_Start
     using Ninject;
     using Ninject.Web.Common;
 	using Ninject.Extensions.Conventions;
+    using Radiator.Core;
+    using Radiator.Core.Commanding;
+    using Microsoft.Practices.ServiceLocation;
+    using System.Collections.Generic;
+    using TheNuggetList.Commands.Nuggets;
+    using TheNuggetList.Commands.Nuggets.Validators;
+    using TheNuggetList.Commands.Nuggets.Executors;
+    using TheNuggetList.NinjectModules;
 
     public static class NinjectWebCommon 
     {
@@ -54,11 +62,41 @@ namespace TheNuggetList.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+
 			kernel.Bind(x =>
 				x.FromAssembliesMatching("TheNuggetList.Data.dll")
 				.SelectAllClasses()
 				.BindAllInterfaces()
 			);
+            
+            kernel.Load(
+                    new CommandingModule(), 
+                    new DataModule());          
+
+            //Common service locator
+            ServiceLocator.SetLocatorProvider(() => new NinjectServiceLocator(kernel));
+            
         }        
     }
+
+    public class NinjectServiceLocator : ServiceLocatorImplBase
+    {
+        public IKernel Kernel { get; private set; }
+
+        public NinjectServiceLocator(IKernel kernel)
+        {
+            Kernel = kernel;
+        }
+
+        protected override object DoGetInstance(Type serviceType, string key)
+        {
+            return Kernel.Get(serviceType, key);
+        }
+
+        protected override IEnumerable<object> DoGetAllInstances(Type serviceType)
+        {
+            return Kernel.GetAll(serviceType);
+        }
+    }
+
 }

@@ -7,12 +7,20 @@ using System.Web;
 using System.Web.Mvc;
 using TheNuggetList.Domain.Nuggets;
 using TheNuggetList.Data;
+using Radiator.Core;
+using TheNuggetList.Commands.Nuggets;
 
 namespace TheNuggetList.Controllers
 {
     public class HomeController : Controller
     {
         private NuggetDbContext db = new NuggetDbContext();
+
+        public HomeController(ICommandService commandService)
+        {
+         
+        }
+
 
         //
         // GET: /Home/
