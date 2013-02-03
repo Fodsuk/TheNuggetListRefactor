@@ -62,9 +62,9 @@
     <Reference Include="Ninject.Web.Common">
       <HintPath>..\packages\Ninject.Web.Common.3.0.0.7\lib\net40-full\Ninject.Web.Common.dll</HintPath>
     </Reference>
-	  <Reference Include="Ninject.Web.Mvc">
-		  <HintPath>..\packages\Ninject.MVC3.3.0.0.6\lib\net40-full\Ninject.Web.Mvc.dll</HintPath>
-	  </Reference>
+    <Reference Include="Ninject.Web.Mvc">
+      <HintPath>..\packages\Ninject.MVC3.3.0.0.6\lib\net40-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Radiator.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Radiator.Core.1.1.0.0\lib\net40\Radiator.Core.dll</HintPath>
     </Reference>
@@ -179,11 +179,11 @@
     <None Include="Properties\PublishProfiles\thenuggetlist - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\TheNuggetList - Web Deploy.pubxml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\_viewstart.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
     <Content Include="Views\Home\Edit.cshtml" />
     <Content Include="Views\Home\Delete.cshtml" />
-    <Content Include="Views\Home\_viewstart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TheNuggetList.Commands\TheNuggetList.Commands.csproj">
