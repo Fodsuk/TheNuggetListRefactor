@@ -1,0 +1,35 @@
+@import "compass/css3";
+@import "util/retina-sprites";
+$experimental-support-for-svg: true;
+
+//Accent Colours
+
+//Neutral Colours
+$lightGrey: #eee;
+
+//Custom Mixins
+
+@mixin default-transition($time) {
+	-webkit-transition: all $time ease-out; 
+	-moz-transition: all $time ease-out; 
+	-ms-transition: all $time ease-out; 
+	-o-transition: all $time ease-out; 
+	transition: all $time ease-out;
+}
+
+@mixin inlineblock {
+	display:inline-block;
+	zoom:1;
+	*display:inline;
+}
+
+@mixin inlineblockList {
+	letter-spacing: -0.31em;
+	*letter-spacing: normal;
+	word-spacing: -0.43em;
+}
+
+@mixin inlineblockItem {
+	letter-spacing:normal;
+	word-spacing:normal;
+}

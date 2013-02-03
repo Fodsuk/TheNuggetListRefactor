@@ -1,13 +1,190 @@
 ﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>The Nuggets List!</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Nugget List</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Lobster' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="@Url.Content("/Content/Css/bootstrap.css")">
+	<link rel="stylesheet" href="@Url.Content("/Content/Css/styles.css")">
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<script src="@Url.Content("/Scripts/vendor/modernizr-2.6.2-respond-1.1.0.min.js")"></script>
 </head>
 <body>
-    <div>
-        @RenderBody()
-    </div>
+	<!--[if lt IE 7]>
+			<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+	<![endif]-->
+	<div class="container-wrapper masthead">
+		<div class="container-narrow">
+			<a href="/" id="logo">
+				<img src="@Url.Content("/Content/Images/logos/nugget-list.png")" alt="Nugget List" />
+				<span>beta</span> </a>
+			<ul class="nav nav-pills pull-right">
+				<li class="active"><a href="#signIn" role="button" data-toggle="modal">Sign in</a></li>
+				<li><a href="#register" role="button" data-toggle="modal">Register</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="container-wrapper jumbotron">
+		<div class="container-narrow">
+			<h1>
+				nug&middot;get <small class="sub">-noun</small>
+			</h1>
+			<p class="lead">
+				anything of great value, significance, or the like: nuggets of wisdom</p>
+			<span class="header-nugget"></span>
+		</div>
+	</div>
+	<div class="container-narrow">
+		
+		@RenderBody()
+
+		<div class="addNugget">
+			<form action="#" method="post">
+			<div class="control-group">
+				<label class="control-label" for="name">
+					Name</label>
+				<div class="controls">
+					<input class="input-block-level" type="text" placeholder="Share your nugget..." id="name" />
+				</div>
+			</div>
+			<div class="additionalFields">
+				<div class="control-group">
+					<label class="control-label" for="name">
+						Name</label>
+					<div class="controls">
+						<textarea class="input-block-level" rows="10" placeholder="Describe your nugget"></textarea>
+					</div>
+				</div>
+				<div class="form-actions">
+					<button type="button" class="btn">
+						Cancel</button>
+					<button type="submit" class="btn btn-primary btn-large">
+						Post nugget</button>
+				</div>
+			</div>
+			</form>
+		</div>
+		<ul class="nuggets">
+			<li class="nugget">
+				<article>
+					<header class="hd">
+						<h1>
+							Nugget Name</h1>
+					</header>
+					<div class="description">
+						<p>
+							Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+							egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet,
+							ante.</p>
+						<p>
+							Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris
+							placerat eleifend leo.</p>
+					</div>
+					<footer class="meta">
+						<p class="created">
+							<strong>Posted:</strong> 2 days ago <span>by</span> fitz0019</p>
+					</footer>
+				</article>
+			</li>
+			<li class="nugget">
+				<article>
+					<header class="hd">
+						<h1>
+							Nugget Name</h1>
+					</header>
+					<div class="description">
+						<p>
+							Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+							egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet,
+							ante.</p>
+						<p>
+							Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris
+							placerat eleifend leo.</p>
+					</div>
+					<footer class="meta">
+						<p class="created">
+							<strong>Posted:</strong> 2 days ago <span>by</span> fitz0019</p>
+					</footer>
+				</article>
+			</li>
+			<li class="nugget">
+				<article>
+					<header class="hd">
+						<h1>
+							Nugget Name</h1>
+					</header>
+					<div class="description">
+						<p>
+							Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+							egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet,
+							ante.</p>
+						<p>
+							Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris
+							placerat eleifend leo.</p>
+					</div>
+					<footer class="meta">
+						<p class="created">
+							<strong>Posted:</strong> 2 days ago <span>by</span> fitz0019</p>
+					</footer>
+				</article>
+			</li>
+		</ul>
+		<div class="footer">
+			<p>
+				&copy; @DateTime.Now.Year Nugget List</p>
+			<p>
+				Press <span class="key">N</span> to start sharing your next nugget.</p>
+		</div>
+	</div>
+	<!-- Login -->
+	<div id="signIn" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="signInLabel"
+		aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+				×</button>
+			<h3 id="signInLabel">
+				Sign-in</h3>
+		</div>
+		<div class="modal-body">
+			<p>
+				We are currently in beta. This will be enabled in the future!</p>
+		</div>
+		<div class="modal-footer">
+			<button data-dismiss="modal" class="btn btn-primary">
+				Okay!</button>
+		</div>
+	</div>
+	<!-- Login -->
+	<div id="register" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="registerLabel"
+		aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+				×</button>
+			<h3 id="registerLabel">
+				Register</h3>
+		</div>
+		<div class="modal-body">
+			<p>
+				We are currently in beta. This will be enabled in the future!</p>
+		</div>
+		<div class="modal-footer">
+			<button data-dismiss="modal" class="btn btn-primary">
+				Okay!</button>
+		</div>
+	</div>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<script>		window.jQuery || document.write('<script src="@Url.Content("Scripts/vendor/jquery-1.9.0.min.js")"><\/script>')</script>
+	<script src="@Url.Content("/Scripts/vendor/bootstrap.min.js")"></script>
+	<script src="@Url.Content("/Scripts/vendor/jquery.hotkeys.js")"></script>
+	<script src="@Url.Content("/Scripts/main.js")"></script>
+
 </body>
 </html>

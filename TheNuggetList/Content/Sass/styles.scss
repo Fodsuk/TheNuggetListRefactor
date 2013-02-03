@@ -1,0 +1,233 @@
+@import "base";
+
+html {
+	background:#fff;
+	height:100%;
+}
+
+body {
+	min-height:100%;
+	background:image_url("bg/absurdidad.png", false, false) top left repeat;
+}
+
+.container-narrow {
+	margin: 0 auto;
+	max-width: 700px;
+}
+
+.masthead {
+	border-bottom:1px solid $lightGrey;
+	padding:25px 0 25px;
+	background:#fff;
+	@extend .clearfix;
+
+	.nav {
+		margin-top:5px;
+		margin-bottom:0;
+	}
+
+}
+
+#logo {
+	float:left;
+	position:relative;
+
+	span {
+		font-family: 'Lobster', cursive;
+		font-size:16px;
+		color:#231f20;
+		position: absolute;
+		bottom:-4px;
+		right:-6px;
+		line-height:1;
+	}
+
+}
+
+.jumbotron {
+	position: relative;
+	color:#fff;
+	border-bottom:1px solid darken($lightGrey, 2%);
+	margin:0;
+	padding:0;
+	text-align: center;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.35);
+	overflow:hidden;
+	@include background-image(linear-gradient(#212121, lighten(#212121, 10%)));
+
+	&:before {
+		content:'';
+		position: absolute;
+		width: 100%;
+		left: 0;
+		bottom:0;
+		height: 10px;
+		z-index: 2;
+		@include background-image(linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.3)));
+
+	}
+
+	.container-narrow {
+		padding:25px 0 150px;
+		background:image_url("bg/header-fade.png", false, false) bottom center no-repeat;
+	}
+
+	h1 {
+		margin-top:0;
+		margin-bottom:15px;
+		font-size: 55px;
+		line-height: 1;
+		font-weight:normal;
+		font-family: 'Lobster', cursive;		
+	}
+
+	.sub {
+		font-family: 'Droid Sans', sans-serif;
+		font-size: 18px; 
+		color: lighten(#333, 50%);
+		font-style: italic;
+
+	}
+
+	.lead {
+		font-weight: normal;
+		margin:0;
+	}
+
+	.header-nugget {
+		position: absolute;
+		bottom:-140px;
+		left: 50%;
+		margin:0 0 0 -109px;
+		height: 259px;
+		width: 218px;
+		z-index: 1;
+		background:image_url("bg/header-nugget.png", false, false) top left no-repeat;
+	}
+
+	.btn {
+		font-size: 21px;
+		padding: 14px 24px;
+	} 
+
+}
+
+.addNugget {
+	padding:25px 0 0 0;
+
+	form {
+		margin:0;
+	}
+
+	label {
+		@extend .visuallyhidden;		
+	}
+
+	input[type="text"] {
+		height: 60px;
+		padding:5px 10px;
+	}
+
+	textarea {
+		padding:8px 10px;
+	}
+
+	.form-actions {
+		background:none;
+		border:0;
+		padding:0;
+		text-align:right;
+
+		button {
+			margin-left:10px;
+		}
+
+	}	
+
+	.additionalFields {
+		//display: none;
+	}
+
+}
+
+.nuggets {
+	background:image_url("bg/hr.png", false, false) top center no-repeat;
+	margin:25px 0 0 0;
+	padding:80px 0 10px 0;
+	list-style:none outside;
+}
+
+.nugget {
+	margin:0 0 25px 0;
+	border:1px solid #ccc;
+	border-radius:5px;
+	background:#fff;
+	@include box-shadow(0 2px 2px 0 rgba(0,0,0,0.1));
+
+	.hd {
+		border-radius:4px 4px 0 0;
+		padding:8px 15px;
+		border-bottom:1px solid #ccc;
+		text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+		@include background-image(linear-gradient(lighten($lightGrey, 10%), $lightGrey));		
+	}
+
+	h1 {
+		font-size: 18px;
+		margin:0;
+	}
+
+	.description {
+		padding:15px;
+		line-height: 22px;
+		color:lighten(#333, 15%);
+	}
+
+	.meta {
+		border-top:1px solid $lightGrey;
+		background:lighten($lightGrey, 5%);
+		border-radius:0 0 4px 4px;
+		padding:8px 15px;
+
+		.created {
+			margin:0;
+			font-size:12px;
+			color:lighten(#333, 10%);
+		}
+
+	}
+
+}
+
+
+.footer {
+	font-size:12px;
+	border-top:1px solid $lightGrey;
+	margin:20px 0 0 0;
+	padding:20px 0;
+	color:lighten(#333,25%);
+	@extend .clearfix;
+
+	p {
+		margin:0;
+		float:right;
+	}
+
+	p:first-child {
+		float:left;
+	}
+
+	.key {
+		border:1px solid #ccc;
+		font-weight: bold;
+		border-radius:3px;
+		padding:0 5px;
+		background: #fff;
+		@include box-shadow(1px 1px 1px 0 rgba(0,0,0,0.1));
+		@include inline-block;
+		vertical-align: middle;
+	}
+
+}
+
+@import "helpers";

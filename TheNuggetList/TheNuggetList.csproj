@@ -158,7 +158,20 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\Images\bg\absurdidad.png" />
+    <Content Include="Content\Images\bg\absurdidad_%402X.png" />
+    <Content Include="Content\Images\bg\header-fade.png" />
+    <Content Include="Content\Images\bg\header-nugget.png" />
+    <Content Include="Content\Images\bg\hr.png" />
+    <Content Include="Content\Images\glyphicons-halflings-white.png" />
+    <Content Include="Content\Images\glyphicons-halflings.png" />
+    <Content Include="Content\Images\logos\nugget-list.png" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\vendor\bootstrap.min.js" />
+    <Content Include="Scripts\vendor\jquery-1.9.0.min.js" />
+    <Content Include="Scripts\vendor\jquery.hotkeys.js" />
+    <Content Include="Scripts\vendor\modernizr-2.6.2-respond-1.1.0.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -172,6 +185,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Css\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -180,6 +194,13 @@
     <Content Include="Views\Shared\_layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Content\config.rb" />
+    <None Include="Content\Sass\bootstrap.scss" />
+    <None Include="Content\Sass\styles.scss" />
+    <None Include="Content\Sass\util\_retina-sprites.scss" />
+    <None Include="Content\Sass\_base.scss" />
+    <None Include="Content\Sass\_bootstrap-responsive.scss" />
+    <None Include="Content\Sass\_helpers.scss" />
     <None Include="Properties\PublishProfiles\thenuggetlist - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\TheNuggetList - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\thenuggetlist - Web Deploy %282%29.pubxml" />
