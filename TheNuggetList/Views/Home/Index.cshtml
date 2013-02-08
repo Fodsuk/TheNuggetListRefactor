@@ -30,4 +30,12 @@
 </div>
 
 
-@Html.Partial("_homeNuggetList", new List<HomeNuggetListItemViewModel>())
+@Html.Partial("_homeNuggetList", new List<HomeNuggetListItemViewModel>()
+    {
+        new HomeNuggetListItemViewModel()
+            {
+                Title = "I Can Typing",
+                Description = "I Can Typing",
+                Created = new DateTime(2013, 02, 08, 22, 59, 00)
+            }
+    })
