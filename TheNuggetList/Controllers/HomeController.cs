@@ -9,6 +9,7 @@ using TheNuggetList.Domain.Nuggets;
 using TheNuggetList.Data;
 using Radiator.Core;
 using TheNuggetList.Commands.Nuggets;
+using TheNuggetList.ViewModels;
 
 namespace TheNuggetList.Controllers
 {
@@ -20,7 +21,18 @@ namespace TheNuggetList.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            //TODO: Newark, you need to fetch these
+            var nuggets = new List<HomeNuggetListItemViewModel>()
+                {
+                    new HomeNuggetListItemViewModel()
+                        {
+                            Title = "I Can Typing",
+                            Description = "I Can Typing",
+                            Created = new DateTime(2013, 02, 08, 22, 59, 00)
+                        }
+                };
+
+            return View(new HomeViewModel() { Nuggets = nuggets });
         }
     }
 }
