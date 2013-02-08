@@ -153,6 +153,7 @@
     <Compile Include="NinjectModules\CommandingModule.cs" />
     <Compile Include="NinjectModules\DataModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\HomeNuggetListItemViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -208,6 +209,8 @@
     <None Include="Properties\PublishProfiles\TheNuggetList - Web Deploy.pubxml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\_viewstart.cshtml" />
+    <Content Include="Views\Shared\_footer.cshtml" />
+    <Content Include="Views\Shared\_homeNuggetList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TheNuggetList.Commands\TheNuggetList.Commands.csproj">
