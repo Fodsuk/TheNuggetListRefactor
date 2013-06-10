@@ -23,7 +23,7 @@ namespace TheNuggetList.Website.NinjectModules
 
 			Kernel.Bind<HttpContext>().ToConstant(HttpContext.Current);
 
-			KernelInstance.Inject(Roles.Provider);
+			//KernelInstance.Inject(Roles.Provider);
         }
     }
 }
