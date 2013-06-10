@@ -12,10 +12,13 @@ namespace TheNuggetList.Commands.Nuggets.Validators
         public override ProcessResult ValidateCommand(CreateNuggetCommand command)
         {
             if (IsEmptyOrNullString(command.Title))
-                return FailedResult("You must provide a Title");
+                return FailedResult("You must provide a Title.");
 
             if (IsEmptyOrNullString(command.Description))
-                return FailedResult("You must provide a Description");
+                return FailedResult("You must provide a Description.");
+
+			if (command.Member == null)
+				return FailedResult("A nugget must be assigned to a member.");
 
             return SuccessfulResult();           
         }

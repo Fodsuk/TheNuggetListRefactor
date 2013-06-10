@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Microsoft.Practices.ServiceLocation;
 using Ninject.Modules;
+using Ninject.Extensions.Conventions;
 using Radiator.Core;
 using Radiator.Core.Commanding;
-using Microsoft.Practices.ServiceLocation;
 using TheNuggetList.Commands.Nuggets;
-using TheNuggetList.Commands.Nuggets.Validators;
 using TheNuggetList.Commands.Nuggets.Executors;
+using TheNuggetList.Commands.Nuggets.Validators;
+using TheNuggetList.Commands;
 
-namespace TheNuggetList.NinjectModules
+namespace TheNuggetList.Website.NinjectModules
 {
     public class CommandingModule : NinjectModule
     {
@@ -21,24 +19,31 @@ namespace TheNuggetList.NinjectModules
             Configuration commandConfig = new Configuration(new NinjectDependencyResolver());
             Kernel.Bind<ICommandService>().ToMethod(_ => { return new CommandService(commandConfig); });
 
-            //validators
-            Kernel.Bind<CommandValidator<CreateNuggetCommand>>().To<CreateNuggetValidator>();
+			Kernel.Bind(x =>
+				x.FromAssembliesMatching("TheNuggetList.Commands.dll")
+				.SelectAllClasses()
+				.InheritedFrom(typeof(BaseExecutor<>))
+				.BindBase()
+			);
 
-            //executors
-            Kernel.Bind<CommandExecutor<CreateNuggetCommand>>().To<CreateNuggetExecutor>();
+			Kernel.Bind(x =>
+				x.FromAssembliesMatching("TheNuggetList.Commands.dll")
+				.SelectAllClasses()
+				.InheritedFrom(typeof(BaseValidator<>))
+				.BindBase()
+			);
         }
     }
-
     
     public class NinjectDependencyResolver : IDependencyResolver
     {
         public CommandExecutor<TCommand> GetExecutor<TCommand>(TCommand command) where TCommand : Command
         {
-            return ServiceLocator.Current.GetInstance<CommandExecutor<TCommand>>();
+            return ServiceLocator.Current.GetInstance<BaseExecutor<TCommand>>();
         }
         public CommandValidator<TCommand> GetValidator<TCommand>(TCommand command) where TCommand : Command
         {
-            return ServiceLocator.Current.GetInstance<CommandValidator<TCommand>>();
+            return ServiceLocator.Current.GetInstance<BaseValidator<TCommand>>();
         }
     }
 }

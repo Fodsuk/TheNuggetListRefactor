@@ -12,5 +12,10 @@ namespace TheNuggetList.Data
 	{
 		public DbSet<Member> Members { get; set; }
         public DbSet<Nugget> Nuggets { get; set; }
+
+		protected override void OnModelCreating(DbModelBuilder modelBuilder)
+		{
+			modelBuilder.Entity<Member>().HasMany<Nugget>(x => x.Nuggets).WithRequired(x => x.Member);
+		}
     }
 }

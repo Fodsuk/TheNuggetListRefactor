@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Web Developer Express 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheNuggetList", "TheNuggetList\TheNuggetList.csproj", "{30B34716-DD42-4CF7-AC0E-132B530865EB}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheNuggetList.Website", "TheNuggetList\TheNuggetList.Website.csproj", "{30B34716-DD42-4CF7-AC0E-132B530865EB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheNuggetList.Data", "TheNuggetList.Data\TheNuggetList.Data.csproj", "{5AD1C4E8-4E3C-4BFD-9464-37064DE45FA8}"
 EndProject

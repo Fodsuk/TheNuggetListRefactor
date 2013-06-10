@@ -18,7 +18,7 @@ namespace TheNuggetList.App_Start
     using TheNuggetList.Commands.Nuggets;
     using TheNuggetList.Commands.Nuggets.Validators;
     using TheNuggetList.Commands.Nuggets.Executors;
-    using TheNuggetList.NinjectModules;
+	using TheNuggetList.Website.NinjectModules;
 
     public static class NinjectWebCommon 
     {
@@ -61,21 +61,14 @@ namespace TheNuggetList.App_Start
         /// </summary>
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
-        {
-
-			kernel.Bind(x =>
-				x.FromAssembliesMatching("TheNuggetList.Data.dll")
-				.SelectAllClasses()
-				.BindAllInterfaces()
-			);
-            
+        {            
             kernel.Load(
                     new CommandingModule(), 
-                    new DataModule());          
+                    new DataModule(),
+					new WebsiteModule());
 
             //Common service locator
             ServiceLocator.SetLocatorProvider(() => new NinjectServiceLocator(kernel));
-            
         }        
     }
 

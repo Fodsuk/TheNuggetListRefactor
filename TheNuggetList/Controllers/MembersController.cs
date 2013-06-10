@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TheNuggetList.Commands.Nuggets.Executors;
 
-namespace TheNuggetList.Controllers
+namespace TheNuggetList.Website.Controllers
 {
     public class MembersController : Controller
     {

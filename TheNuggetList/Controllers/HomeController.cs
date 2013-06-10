@@ -9,14 +9,17 @@ using TheNuggetList.Domain.Nuggets;
 using TheNuggetList.Data;
 using Radiator.Core;
 using TheNuggetList.Commands.Nuggets;
-using TheNuggetList.ViewModels;
+using TheNuggetList.Website.ViewModels;
 
-namespace TheNuggetList.Controllers
+namespace TheNuggetList.Website.Controllers
 {
     public class HomeController : Controller
-    {    
+    {
+		private readonly ICommandService _commandService;
+
         public HomeController(ICommandService commandService)
-        {            
+        {
+			_commandService = commandService;
         }
 
         public ActionResult Index()

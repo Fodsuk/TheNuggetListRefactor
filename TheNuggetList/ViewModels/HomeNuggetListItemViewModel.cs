@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TheNuggetList.ViewModels
+namespace TheNuggetList.Website.ViewModels
 {
     public class HomeNuggetListItemViewModel
     {

@@ -47,13 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201302031427307_AddedMember.cs" />
-    <Compile Include="Migrations\201302031427307_AddedMember.Designer.cs">
-      <DependentUpon>201302031427307_AddedMember.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201302031633090_AddFieldsToNugget.cs" />
-    <Compile Include="Migrations\201302031633090_AddFieldsToNugget.Designer.cs">
-      <DependentUpon>201302031633090_AddFieldsToNugget.cs</DependentUpon>
+    <Compile Include="Migrations\201306062142212_AddNuggetsAndMembers.cs" />
+    <Compile Include="Migrations\201306062142212_AddNuggetsAndMembers.Designer.cs">
+      <DependentUpon>201306062142212_AddNuggetsAndMembers.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NuggetDbContext.cs" />
@@ -69,11 +65,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201302031427307_AddedMember.resx">
-      <DependentUpon>201302031427307_AddedMember.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201302031633090_AddFieldsToNugget.resx">
-      <DependentUpon>201302031633090_AddFieldsToNugget.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201306062142212_AddNuggetsAndMembers.resx">
+      <DependentUpon>201306062142212_AddNuggetsAndMembers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

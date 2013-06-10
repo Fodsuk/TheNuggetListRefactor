@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TheNuggetList.Domain.Members;
 
 namespace TheNuggetList.Domain.Nuggets
 {
@@ -11,5 +12,6 @@ namespace TheNuggetList.Domain.Nuggets
 		public string Title { get; set; }
         public string Description { get; set; }
         public DateTime Created { get; set; }
+		public virtual Member Member { get; set; }
     }
 }

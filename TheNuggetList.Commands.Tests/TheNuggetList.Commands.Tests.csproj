@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Members\RegisterMemberValidatorTests.cs" />
     <Compile Include="Nuggets\CreateNuggetValidatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -59,6 +60,10 @@
     <ProjectReference Include="..\TheNuggetList.Commands\TheNuggetList.Commands.csproj">
       <Project>{6677D8FB-6104-498B-A9BF-A5A471D79F7E}</Project>
       <Name>TheNuggetList.Commands</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TheNuggetList.Domain\TheNuggetList.Domain.csproj">
+      <Project>{9B5E8631-26CA-474C-87D5-CB10A92D6E6A}</Project>
+      <Name>TheNuggetList.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

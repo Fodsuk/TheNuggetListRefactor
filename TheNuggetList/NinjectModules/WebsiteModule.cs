@@ -7,20 +7,23 @@ using Ninject.Extensions.Conventions;
 using System.Data.Entity;
 using TheNuggetList.Data;
 using Ninject.Web.Common;
+using System.Web.Security;
 
 namespace TheNuggetList.Website.NinjectModules
 {
-    public class DataModule : NinjectModule
+    public class WebsiteModule : NinjectModule
     {
         public override void Load()
         {
             Kernel.Bind(x =>
-                x.FromAssembliesMatching("TheNuggetList.Data.dll")
+                x.FromThisAssembly()
                 .SelectAllClasses()
                 .BindAllInterfaces()
             );
 
-            Kernel.Bind<NuggetDbContext>().ToSelf().InRequestScope();
+			Kernel.Bind<HttpContext>().ToConstant(HttpContext.Current);
+
+			KernelInstance.Inject(Roles.Provider);
         }
     }
 }

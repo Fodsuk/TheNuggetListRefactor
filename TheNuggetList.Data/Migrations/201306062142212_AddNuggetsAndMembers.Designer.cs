@@ -5,13 +5,13 @@ namespace TheNuggetList.Data.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    public sealed partial class AddFieldsToNugget : IMigrationMetadata
+    public sealed partial class AddNuggetsAndMembers : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddFieldsToNugget));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddNuggetsAndMembers));
         
         string IMigrationMetadata.Id
         {
-            get { return "201302031633090_AddFieldsToNugget"; }
+            get { return "201306062142212_AddNuggetsAndMembers"; }
         }
         
         string IMigrationMetadata.Source

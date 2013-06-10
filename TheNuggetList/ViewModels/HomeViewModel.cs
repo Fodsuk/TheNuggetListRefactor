@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace TheNuggetList.ViewModels
+namespace TheNuggetList.Website.ViewModels
 {
     public class HomeViewModel
     {

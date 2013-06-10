@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TheNuggetList.Util
+namespace TheNuggetList.Website.Util
 {
     public class DateTimeFormater
     {

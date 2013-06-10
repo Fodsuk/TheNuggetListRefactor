@@ -19,7 +19,8 @@ namespace TheNuggetList.Commands.Nuggets.Executors
             {
                 Title = command.Title,
                 Description = command.Description,
-                Created = DateTime.Now
+				Member = command.Member,
+                Created = DateTime.Now				
             });
 
             NuggetDbContext.SaveChanges();
